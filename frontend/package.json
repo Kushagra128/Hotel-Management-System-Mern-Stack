@@ -7,17 +7,17 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
-    "bootstrap": "^5.1.0",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.5.0",
     "concurrently": "^6.2.1",
     "icons": "^1.0.0",
     "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.5.20",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^17.0.2",
-    "react-phone-number-input": "^3.1.52",
-    
     "react-icons": "^4.3.1",
+    "react-phone-number-input": "^3.1.52",
     "react-router-dom": "^5.2.1",
     "react-scripts": "^2.1.3",
     "soloalert": "^1.1.10",
@@ -49,5 +49,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

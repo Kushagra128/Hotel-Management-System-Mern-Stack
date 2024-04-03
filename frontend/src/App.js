@@ -19,6 +19,7 @@ import ViewOneInventory from "./components/inventory/ViewOneInventory";
 import RestockInventory from "./components/inventory/RestockInventory";
 import CusLogin from "./components/auth/cusLogin";
 import CusReg from "./components/auth/CusRegister";
+import adminReg from "./components/auth/adminRegister";
 
 import Supsidenav from './components/layouts/Supsidenav'
 import AddSupplier from './components/supplier/AddSupplier'
@@ -44,6 +45,8 @@ import AllBookings from './components/room/ViewAllRoomBookings';
 import ViewPaidSalary from './components/employee/ViewPaidSalary'
 import AddPaidSalary from './components/employee/AddPaidSalary'
 import ViewAllSuppliers from "./components/supplier/ViewAllSuppliers";
+import About from "./pages/About";
+import RoomBookings from "./components/room/RoomBookings";
 
 
 function App() {
@@ -52,8 +55,10 @@ function App() {
 
       <Route path = "/"><CusNavigation/></Route>
 
+
       {/* User Login and Reg*/}
       <Route path = "/cuslogin"><CusLogin/></Route>
+      <Route path = "/adminlogin"><adminRegister/></Route>
       <Route path = "/cusreg"><CusReg/></Route>
       {/* Room Booking Routes */}
       <Route exact path = "/home"><Home/></Route>
@@ -69,6 +74,9 @@ function App() {
       <Route exact path = "/roommanager/add"><AddRoom/></Route>
       <Route exact path = "/roommanager/view"><ViewRooms/></Route>
       <Route exact path = "/roomManager/view/:id"><ViewOneRoom/></Route>
+      <Route exact path = "/about"><About/></Route>
+      <Route exact path = "/booking"><RoomBookings/></Route>
+
 
       {/* Supplier Management Routes */}
       <Route path = "/supmanager"><Supsidenav/></Route>

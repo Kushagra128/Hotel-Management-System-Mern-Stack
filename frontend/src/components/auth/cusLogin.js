@@ -19,9 +19,9 @@ export default function CusLogin() {
             const loginDetails = { cusemail, password }
             const data = (await axios.post("http://localhost:5000/customer/login", loginDetails)).data
             console.log(data)
-            if(data.status.role === 'customer'){
+            if (data.status.role === 'customer') {
                 window.location = '/rooms'
-            }else{
+            } else {
                 window.location = '/dashboard'
             }
 
@@ -36,10 +36,32 @@ export default function CusLogin() {
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-md-9 col-lg-6 col-xl-5">
-                        <img src="https://www.linkpicture.com/q/5312964.jpg"
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                             class="img-fluid" alt="Sample image" />
                     </div>
                     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <div class="text-center mb-3">
+                            <h3><b>Login in with:</b></h3>
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-google"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                        <hr />
+                        <center>
+                            <p>OR</p>
+                        </center>
 
                         <form>
                             <h3 mb-5>Login</h3>
@@ -60,12 +82,15 @@ export default function CusLogin() {
                             <div class="text-center text-lg-start mt-4 pt-2 d-flex justify-content-start">
                                 <button type="button" class="btn btn-primary btn-lg" onClick={(e) => { loginData(e) }}>Login</button>
                                 <p class="small fw-bold mt-2 pt-1 mb-0 mx-5">Don't have an account? <a href="/cusreg"
-                                    class="link-danger">Register</a></p>
+                                    class="link-primary">Register</a></p>
                             </div>
+
 
                         </form>
                     </div>
+
                 </div>
+
             </div>
             <div
                 class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-dark">

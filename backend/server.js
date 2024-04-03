@@ -23,7 +23,7 @@ app.listen(PORT,()=>{
 
 ///---------------------------------------connect to mongoDB-------------------------------------------
     //Type 01
-const URL= process.env.MONGO_CONNECT;
+const URL= "mongodb+srv://Foodie:Kushagra28@cluster0.aqswzky.mongodb.net/Foodie?retryWrites=true&w=majority";
 
 mongoose
     .connect(URL,{

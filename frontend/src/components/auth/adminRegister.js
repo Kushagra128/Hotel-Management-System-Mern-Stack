@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import axios from 'axios';
 import "./cuslogin.css"
 import 'react-phone-number-input/style.css'
-import PhoneInput  from 'react-phone-number-input' 
+import PhoneInput from 'react-phone-number-input'
 
 export default function AddReg() {
 
@@ -22,7 +22,7 @@ export default function AddReg() {
         setLoading(true)
         try {
             e.preventDefault();
-            if (password != Confirmpw){
+            if (password != Confirmpw) {
                 SoloAlert.alert({
                     title: "Oops!",
                     body: "Password Mismatch!",
@@ -35,44 +35,44 @@ export default function AddReg() {
                 });
             }
             else
-            if (!cusname || !cusemail || !phoneno || !password ) {
-                SoloAlert.alert({
-                    title: "Oops!",
-                    body: "Please fill all fields",
-                    icon: "warning",
-                    theme: "dark",
-                    useTransparency: true,
-                    onOk: function () {
-
-                    },
-                });
-            } else {
-                //role
-                let role = 'admin'
-                const newDetails = {cusname, cusemail, phoneno, password,role}
-                
-                //db
-                const data =  (await axios.post("http://localhost:5000/customer/", newDetails)).status
-                if (data === 200) {
+                if (!cusname || !cusemail || !phoneno || !password) {
                     SoloAlert.alert({
-                        title: "Welcome!",
-                        body: "Registered Succesfully",
-                        icon: "success",
+                        title: "Oops!",
+                        body: "Please fill all fields",
+                        icon: "warning",
                         theme: "dark",
                         useTransparency: true,
                         onOk: function () {
 
                         },
                     });
-                }
+                } else {
+                    //role
+                    let role = 'admin'
+                    const newDetails = { cusname, cusemail, phoneno, password, role }
 
-            }
+                    //db
+                    const data = (await axios.post("http://localhost:5000/customer/", newDetails)).status
+                    if (data === 200) {
+                        SoloAlert.alert({
+                            title: "Welcome!",
+                            body: "Registered Succesfully",
+                            icon: "success",
+                            theme: "dark",
+                            useTransparency: true,
+                            onOk: function () {
+
+                            },
+                        });
+                    }
+
+                }
         } catch (err) {
             console.log(err)
         }
         setLoading(false)
     }
-    
+
     function clear() {
 
     }
@@ -81,7 +81,7 @@ export default function AddReg() {
 
     return (
         <section class="vh-100">
-            
+
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-md-9 col-lg-6 col-xl-5">
@@ -89,7 +89,21 @@ export default function AddReg() {
                             class="img-fluid" alt="Sample image" />
                     </div>
                     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <h3>Register</h3>
+                        <h3>Register</h3>
+                        <div>
+                            <a href="#!" class="text-white me-4">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#!" class="text-white me-4">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#!" class="text-white me-4">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href="#!" class="text-white">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
                         <form>
 
                             <div class="form-outline mb-3">
@@ -110,17 +124,17 @@ export default function AddReg() {
                                     value={phoneno}
                                     onChange={setphoneno}/> */}
 
-                            
+
                                 <input type="number" id="form3Example4" class="form-control form-control-lg"
                                     placeholder="Phone Number" required
                                     onChange={(e) => { setphoneno(e.target.value) }} />
                             </div>
 
-                           
+
                             <div class="form-outline mb-3">
                                 <input type="password" id="form3Example4" class="form-control form-control-lg"
                                     placeholder="Password" required
-                                    onChange={(e) => { setpassword(e.target.value) }}  />
+                                    onChange={(e) => { setpassword(e.target.value) }} />
                             </div>
                             <div class="form-outline mb-3">
                                 <input type="password" id="form3Example4" class="form-control form-control-lg"
@@ -129,7 +143,7 @@ export default function AddReg() {
 
                             <div class="text-center text-lg-start mt-4 pt-2 d-flex justify-content-start">
                                 <button type="button" class="btn btn-primary btn-lg" onClick={(e) => { submitData(e) }}
-                        disabled={isLoading} > Register</button>
+                                    disabled={isLoading} > Register</button>
 
                                 <p class="small fw-bold mt-2 pt-1 mb-0 mx-5">Already have account? <a href="/cuslogin"
                                     class="link-danger">Login</a></p>
@@ -147,20 +161,7 @@ export default function AddReg() {
                 </div>
 
 
-                <div>
-                    <a href="#!" class="text-white me-4">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#!" class="text-white me-4">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#!" class="text-white me-4">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="#!" class="text-white">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
+
 
             </div>
         </section>
